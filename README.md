@@ -1,3 +1,7 @@
+# Conexió con VUEJS (https://medium.com/@dmi3coder/build-run-and-deploy-vuejs-app-with-quarkus-d6d1ae94ced9)
+```
+./mvnw compile exec:exec@npm-watch quarkus:dev
+```
 # team-morale project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
