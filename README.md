@@ -47,24 +47,8 @@ If you want to learn more about building native executables, please consult http
 
 ## Related guides
 
-- YAML Configuration ([guide](https://quarkus.io/guides/config#yaml)): Use YAML to configure your Quarkus application
-- RESTEasy JAX-RS ([guide](https://quarkus.io/guides/rest-json)): REST endpoint framework implementing JAX-RS and more
 
 ## Provided examples
-
-### YAML Config example
-
-This Supersonic example displays mach speed in your favourite unit, depending on the specified Quarkus configuration.
-
-[Related guide section...](https://quarkus.io/guides/config-reference#configuration-examples)
-
-The Quarkus configuration location is `src/main/resources/application.yml`.
-
-### RESTEasy JAX-RS example
-
-REST is easy peasy with this Hello World RESTEasy resource.
-
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
 
 ### RESTEasy JSON serialisation using Jackson
 
