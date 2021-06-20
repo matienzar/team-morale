@@ -1,0 +1,10 @@
+package org.mutua.teammorale.data;
+
+public enum EmotionLevel {
+
+    // Modelo bifactorial circumplejo de la emoción
+    ALTA_ACTIVACION, AFECTO_AGRADABLE_ACTIVADO, AGRADABLE,AFECTO_AGRADABLE_NO_ACTIVADO, BAJA_ACTIVACION,
+    AFECTO_DESAGRADABLE_NO_ACTIVADO, DESAGRADABLE, AFECTO_DESAGRADABLE_ACTIVADO
+
+
+}
