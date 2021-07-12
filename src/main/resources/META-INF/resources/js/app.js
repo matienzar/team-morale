@@ -175,7 +175,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _com
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  data: function data() {\n    return {\n      links: ['Hacemos realidad tus ideas'],\n      emotions: [{\n        emotion: 'Feliz',\n        value: 75,\n        motivo: 'Me he sentido bien trabajando en equipo para ver de definir el arranque del registro de horas'\n      }, {\n        emotion: 'Entusiasmado',\n        value: 50,\n        motivo: 'El nuevo entorno tecnológico promete, falta tener paciencia y esperar a que llegue'\n      }]\n    };\n  }\n});\n\n//# sourceURL=webpack:///./src/components/AppLayout.vue?./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _api_team__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../api/team */ \"./src/api/team.js\");\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'MainLayout',\n  mounted: function mounted() {\n    _api_team__WEBPACK_IMPORTED_MODULE_0__[\"default\"].getMorale(function (data) {\n      console.log(data);\n    }, function (error) {\n      console.error(error);\n    });\n  },\n  data: function data() {\n    return {\n      links: ['Hacemos realidad tus ideas'],\n      emotions: [{\n        emotion: 'Feliz',\n        value: 75,\n        motivo: 'Me he sentido bien trabajando en equipo para ver de definir el arranque del registro de horas'\n      }, {\n        emotion: 'Entusiasmado',\n        value: 50,\n        motivo: 'El nuevo entorno tecnológico promete, falta tener paciencia y esperar a que llegue'\n      }]\n    };\n  }\n});\n\n//# sourceURL=webpack:///./src/components/AppLayout.vue?./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -273,6 +273,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 /***/ }),
 
+/***/ "./src/api/team.js":
+/*!*************************!*\
+  !*** ./src/api/team.js ***!
+  \*************************/
+/*! exports provided: VERSION, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"VERSION\", function() { return VERSION; });\n/* harmony import */ var _http_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../http-common */ \"./src/http-common.js\");\n\nvar VERSION = 'v1';\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  getMorale: function getMorale(cbok, cberr) {\n    _http_common__WEBPACK_IMPORTED_MODULE_0__[\"TEAM\"].genericGet('/team/' + VERSION, cbok, cberr);\n  }\n});\n\n//# sourceURL=webpack:///./src/api/team.js?");
+
+/***/ }),
+
 /***/ "./src/assets/kyrian.png":
 /*!*******************************!*\
   !*** ./src/assets/kyrian.png ***!
@@ -317,6 +329,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_cache_loader_dist_cjs_js_cacheDirectory_node_modules_cache_vue_loader_cacheIdentifier_553eac62_vue_loader_template_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppLayout_vue_vue_type_template_id_40d62f2b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../node_modules/cache-loader/dist/cjs.js?{\"cacheDirectory\":\"node_modules/.cache/vue-loader\",\"cacheIdentifier\":\"553eac62-vue-loader-template\"}!../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../node_modules/cache-loader/dist/cjs.js??ref--0-0!../../node_modules/vue-loader/lib??vue-loader-options!./AppLayout.vue?vue&type=template&id=40d62f2b& */ \"./node_modules/cache-loader/dist/cjs.js?{\\\"cacheDirectory\\\":\\\"node_modules/.cache/vue-loader\\\",\\\"cacheIdentifier\\\":\\\"553eac62-vue-loader-template\\\"}!./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./src/components/AppLayout.vue?vue&type=template&id=40d62f2b&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_cache_loader_dist_cjs_js_cacheDirectory_node_modules_cache_vue_loader_cacheIdentifier_553eac62_vue_loader_template_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppLayout_vue_vue_type_template_id_40d62f2b___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _node_modules_cache_loader_dist_cjs_js_cacheDirectory_node_modules_cache_vue_loader_cacheIdentifier_553eac62_vue_loader_template_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AppLayout_vue_vue_type_template_id_40d62f2b___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=webpack:///./src/components/AppLayout.vue?");
+
+/***/ }),
+
+/***/ "./src/http-common.js":
+/*!****************************!*\
+  !*** ./src/http-common.js ***!
+  \****************************/
+/*! exports provided: HTTP, TEAM */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"HTTP\", function() { return HTTP; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"TEAM\", function() { return TEAM; });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"../../../node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n\nvar HTTP = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({\n  headers: {\n    'content-type': 'application/json'\n  }\n});\nvar TEAM = {\n  getHeaders: function getHeaders() {\n    var headers = {};\n\n    if (/MSIE|Trident/.test(window.navigator.userAgent)) {\n      headers['Pragma'] = 'no-cache';\n      headers['Cache-Control'] = 'no-cache, no-store';\n    }\n\n    return {\n      headers: headers\n    };\n  },\n  genericGet: function genericGet(service, cbok, cberr) {\n    HTTP.get(service, this.getHeaders()).then(function (response) {\n      cbok(response.data);\n    }).catch(function (error) {\n      cberr(error);\n    });\n  }\n};\n\n//# sourceURL=webpack:///./src/http-common.js?");
 
 /***/ }),
 

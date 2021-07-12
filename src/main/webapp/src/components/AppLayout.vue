@@ -113,7 +113,21 @@
 </template>
 
 <script>
+
+  import api from '../api/team'
+
   export default {
+    name: 'MainLayout',
+    mounted () {
+        api.getMorale(
+          data => {
+            console.log(data)
+          },
+          error => {
+            console.error(error)
+          }
+        );
+    },
     data: () => ({
       links: [
         'Hacemos realidad tus ideas'
