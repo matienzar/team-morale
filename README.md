@@ -24,6 +24,8 @@ http://localhost:8080
 
 
 # Related guides
+## Links
+- [3 reasons Quarkus 2.0 improves developer productivity](https://dzone.com/articles/3-reasons-quarkus-20-improves-developer-productivi)
 ## Provided examples
 ### RESTEasy JSON serialisation using Jackson
 This example demonstrate RESTEasy JSON serialisation by letting you list, add and remove quark types from a list. Quarked!
