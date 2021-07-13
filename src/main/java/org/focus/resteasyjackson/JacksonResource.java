@@ -1,4 +1,4 @@
-package org.mutua.resteasyjackson;
+package org.focus.resteasyjackson;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

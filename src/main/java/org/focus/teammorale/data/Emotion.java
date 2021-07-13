@@ -1,4 +1,4 @@
-package org.mutua.teammorale.data;
+package org.focus.teammorale.data;
 
 public enum Emotion {
     ACTIVADO(EmotionLevel.ALTA_ACTIVACION), ASOMBRADO(EmotionLevel.ALTA_ACTIVACION),

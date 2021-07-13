@@ -1,4 +1,4 @@
-package org.mutua.resteasyjackson;
+package org.focus.resteasyjackson;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;

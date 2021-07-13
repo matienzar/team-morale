@@ -1,7 +1,7 @@
-package org.mutua.teammorale.factory;
+package org.focus.teammorale.factory;
 
-import org.mutua.teammorale.data.SimpleTeam;
-import org.mutua.teammorale.data.Team;
+import org.focus.teammorale.data.SimpleTeam;
+import org.focus.teammorale.data.Team;
 
 import java.util.Date;
 

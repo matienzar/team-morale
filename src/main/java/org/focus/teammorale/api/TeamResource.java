@@ -1,10 +1,10 @@
-package org.mutua.teammorale.api;
+package org.focus.teammorale.api;
 
-import org.mutua.teammorale.data.Emotion;
-import org.mutua.teammorale.data.Team;
-import org.mutua.teammorale.data.TeamEmotion;
-import org.mutua.teammorale.factory.TeamFactory;
-import org.mutua.teammorale.factory.Teams;
+import org.focus.teammorale.data.Emotion;
+import org.focus.teammorale.data.Team;
+import org.focus.teammorale.data.TeamEmotion;
+import org.focus.teammorale.factory.TeamFactory;
+import org.focus.teammorale.factory.Teams;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;

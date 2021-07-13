@@ -1,4 +1,4 @@
-package org.mutua.teammorale.data;
+package org.focus.teammorale.data;
 
 import java.io.Serializable;
 import java.util.List;
