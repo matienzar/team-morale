@@ -120,6 +120,7 @@
     name: 'MainLayout',
     mounted () {
         api.getMorale(
+          '1',
           data => {
             console.log(data)
           },

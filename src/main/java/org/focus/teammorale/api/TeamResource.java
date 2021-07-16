@@ -1,49 +1,42 @@
 package org.focus.teammorale.api;
 
-import org.focus.teammorale.data.Emotion;
 import org.focus.teammorale.data.Team;
-import org.focus.teammorale.data.TeamEmotion;
-import org.focus.teammorale.factory.TeamFactory;
-import org.focus.teammorale.factory.Teams;
+import org.focus.teammorale.repository.TeamRepository;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.inject.Inject;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+import javax.ws.rs.core.Response;
+import java.time.LocalDate;
 
 @Path("/team/v1")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class TeamResource {
 
+    @Inject
+    private TeamRepository teamRepository;
+
     @GET
-    public Team getTeamMorale() {
-        Calendar from = Calendar.getInstance();
-        from.set(Calendar.DAY_OF_MONTH,1);
+    @Path("/{id}")
+    public Team get(@PathParam("id") String teamId,
+                    @QueryParam("start") LocalDate start,
+                    @QueryParam("end") LocalDate end) {
+        return teamRepository.findTeam(teamId, start, end);
+    }
 
-        Calendar to = Calendar.getInstance();
-        to.set(Calendar.DAY_OF_MONTH, to.getActualMaximum(Calendar.DAY_OF_MONTH));
+    // Must be a DELETE, introduce POSTMAN
+    @DELETE
+    @Path("/reset")
+    public Response reset() {
+        teamRepository.reset();
+        return Response.ok("Limpieza realizada").build();
+    }
 
-        Team team = TeamFactory.getInstance()
-                .getTeam(Teams.SIMPLE_TEAM, "Kyrian",from.getTime(),to.getTime(),"Hacemos realidad tus ideas",10);
-
-        TeamEmotion.TeamEmotionBuilder teamEmotionBuilder1 = TeamEmotion.TeamEmotionBuilder.aTeamEmotion(3, Emotion.ABURRIDO);
-        List<String> observations1 = new ArrayList<>();
-        observations1.add("Semana muy rutinaria. No hemos introducido ninguna mejora");
-        teamEmotionBuilder1.withObservations(observations1);
-        team.addEmotion(teamEmotionBuilder1.build());
-
-        TeamEmotion.TeamEmotionBuilder teamEmotionBuilder2 = TeamEmotion.TeamEmotionBuilder.aTeamEmotion(5, Emotion.CALMADO);
-        List<String> observations2 = new ArrayList<>();
-        observations2.add("Hacía falta una semana así para poder parar, pensar y retomar el rumbo");
-        teamEmotionBuilder2.withObservations(observations2);
-        team.addEmotion(teamEmotionBuilder2.build());
-
-
-        return team;
+    @POST
+    @Path("/init")
+    public Response init() {
+        teamRepository.init();
+        return Response.ok("Colecciones inicializadas").build();
     }
 }

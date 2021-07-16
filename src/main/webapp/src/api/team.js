@@ -4,9 +4,9 @@ export const VERSION = 'v1';
 
 export default {
 
-    getMorale(cbok, cberr)
+    getMorale(id, cbok, cberr)
     {
-        TEAM.genericGet('/team/'+ VERSION, cbok, cberr);
+        TEAM.genericGet('/team/'+ VERSION+"/"+id, cbok, cberr);
     }
 
 }
