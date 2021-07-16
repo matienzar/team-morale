@@ -3,7 +3,7 @@
 2) Create keycloak instance
 
 ```shell script
-docker run -p 8000:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin jboss/keycloak 
+docker run --name keycloak-local -p 8000:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin jboss/keycloak 
 ```
 See: [Getting started on keyckloak](https://www.keycloak.org/getting-started/getting-started-docker)
 

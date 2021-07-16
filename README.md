@@ -13,6 +13,7 @@ http://localhost:8080
 
 ### Configure environment
 - [Keycloak to secure the application](./docs/getting-started/APP-KEYCLOAK.md)
+- [MongoDB](./docs/getting-started/APP-MONGODB.md)
 - [Quarkus to develop API](./docs/getting-started/API-QUARKUS.md)
 - [Axios to consume API REST](./docs/getting-started/UI-AXIOS.md)
 
