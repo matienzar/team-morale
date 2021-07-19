@@ -39,4 +39,11 @@ public class TeamResource {
         teamRepository.init();
         return Response.ok("Colecciones inicializadas").build();
     }
+
+    @GET
+    @Path("/init-db")
+    public Response initDatabase() {
+        teamRepository.initDatabase();
+        return Response.ok("Base de datos inicializada").build();
+    }
 }

@@ -1,15 +1,19 @@
 package org.focus.teammorale.repository;
 
+import com.mongodb.client.model.IndexOptions;
+import com.mongodb.client.model.Indexes;
 import io.quarkus.mongodb.panache.PanacheMongoRepository;
 import org.focus.teammorale.data.Emotion;
 import org.focus.teammorale.data.Team;
 import org.focus.teammorale.data.TeamEmotion;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @ApplicationScoped
 public class TeamRepository implements PanacheMongoRepository<Team> {
@@ -26,25 +30,31 @@ public class TeamRepository implements PanacheMongoRepository<Team> {
         deleteAll();
     }
 
+    public void initDatabase() {
+        IndexOptions indexOptions = new IndexOptions();
+        indexOptions.unique(true);
+        indexOptions.name("XUN_TEAM_NAME");
+        mongoCollection().createIndex(Indexes.ascending("teamName"), indexOptions);
+    }
+
     public void init() {
         Team team = new Team();
         team.teamName = "Kyrian";
         team.purpose = "Hacemos realidad tus ideas";
         team.membership = 5;
 
-        persist(team);
 
         TeamEmotion emotion = new TeamEmotion();
-        emotion.team = team;
         emotion.emotion = Emotion.ALEGRE;
         emotion.registered = LocalDateTime.now();
         emotion.observation = "Ha sido una gran semana";
 
-        List<TeamEmotion> emotions = new ArrayList<>();
+        Set<TeamEmotion> emotions = new HashSet<>();
         emotions.add(emotion);
+
         team.teamEmotions = emotions;
 
-        update(team);
+        persist(team);
 
     }
 }

@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "3c26ca67-c039-479c-a5a4-76ce96922b46",
+		"name": "Team Morale",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET MORALE FROM TEAM",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/1",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INIT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/init",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"init"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RESET",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/reset",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INIT-DB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/init-db",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"init-db"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "SERVER",
+			"value": "localhost:8080"
+		},
+		{
+			"key": "PROTOCOL",
+			"value": "http"
+		},
+		{
+			"key": "VERSION",
+			"value": "v1"
+		},
+		{
+			"key": "CONTEXTPATH",
+			"value": "team"
+		},
+		{
+			"key": "BASE_URL",
+			"value": "{{PROTOCOL}}://{{SERVER}}/{{CONTEXTPATH}}/{{VERSION}}"
+		}
+	]
+}
