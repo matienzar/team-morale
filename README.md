@@ -1,7 +1,7 @@
 # Team Morale
 App to assess team morale over time
 
-![Team morale](docs/assets/screenshot-team-morale-1.png)
+![Team morale](docs/assets/screenshot-team-morale-2.png)
 
 Landing: https://focus-team.carrd.co
 
