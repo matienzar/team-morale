@@ -14,3 +14,9 @@ npm run lint
 ```
 ## Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+# Using charts
+```
+npm install --save apexcharts
+npm install --save vue-apexcharts
+```

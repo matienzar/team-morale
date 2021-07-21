@@ -1,6 +1,7 @@
 package org.focus.teammorale.api;
 
 import org.focus.teammorale.data.Team;
+import org.focus.teammorale.dto.TeamMorale;
 import org.focus.teammorale.repository.TeamRepository;
 
 import javax.inject.Inject;
@@ -15,13 +16,13 @@ import java.time.LocalDate;
 public class TeamResource {
 
     @Inject
-    private TeamRepository teamRepository;
+    TeamRepository teamRepository;
 
     @GET
     @Path("/{id}")
-    public Team get(@PathParam("id") String teamId,
-                    @QueryParam("start") LocalDate start,
-                    @QueryParam("end") LocalDate end) {
+    public TeamMorale get(@PathParam("id") String teamId,
+                          @QueryParam("start") LocalDate start,
+                          @QueryParam("end") LocalDate end) {
         return teamRepository.findTeam(teamId, start, end);
     }
 
