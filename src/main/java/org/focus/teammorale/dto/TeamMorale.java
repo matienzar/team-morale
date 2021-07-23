@@ -1,5 +1,7 @@
 package org.focus.teammorale.dto;
 
+import org.focus.teammorale.data.EmotionLevel;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +11,8 @@ public class TeamMorale {
     private LocalDate from;
     private LocalDate to;
     private List<MoraleEmotion> emotions = new ArrayList<>();
+    private List<String> levels = EmotionLevel.asList();
+    private List<Long> emotionsByLevel;
 
     public long getMaxOnPeriod() {
         return maxOnPeriod;
@@ -40,5 +44,21 @@ public class TeamMorale {
 
     public void setEmotions(List<MoraleEmotion> emotions) {
         this.emotions = emotions;
+    }
+
+    public List<String> getLevels() {
+        return levels;
+    }
+
+    public void setLevels(List<String> levels) {
+        this.levels = levels;
+    }
+
+    public List<Long> getEmotionsByLevel() {
+        return emotionsByLevel;
+    }
+
+    public void setEmotionsByLevel(List<Long> emotionsByLevel) {
+        this.emotionsByLevel = emotionsByLevel;
     }
 }

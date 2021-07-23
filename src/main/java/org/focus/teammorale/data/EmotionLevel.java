@@ -1,5 +1,9 @@
 package org.focus.teammorale.data;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public enum EmotionLevel {
 
     // Modelo bifactorial circumplejo de la emoción
@@ -23,5 +27,9 @@ public enum EmotionLevel {
     @Override
     public String toString() {
         return traduccion;
+    }
+
+    public static List<String> asList() {
+        return Stream.of(EmotionLevel.values()).map(e -> e.traduccion).collect(Collectors.toList());
     }
 }

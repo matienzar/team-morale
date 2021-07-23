@@ -54,8 +54,8 @@
                   min-height="50vh"
                   rounded="lg" class="pa-5"
                 >
-                    <div id="chart">
-                        <apexchart type="radar" height="400" :options="chartOptions" :series="series"></apexchart>
+                    <div id="chart-container">
+                        <apexchart ref="chart" type="radar" height="400" :options="chartOptions" :series="series"></apexchart>
                     </div>
                 </v-sheet>
             </v-col>
@@ -161,6 +161,23 @@
           '1',
           data => {
             this.morale = data;
+
+            this.series = [{name: 'Emotion Levels', data: data.emotionsByLevel}];
+            var maxEmotions = data.maxOnPeriod;
+            console.log('Max emotions :'+ maxEmotions);
+            var _options = {
+                labels: data.levels,
+                yaxis: {
+                    max: maxEmotions,
+                    forceNiceScale: true,
+                    decimalsInFloat: 1,
+                    labels: {
+                         formatter: (value) => { return value.toFixed(0);  },
+                    }
+                }
+            }
+            this.$refs.chart.updateOptions(_options);
+
             console.log(data)
           },
           error => {
@@ -195,30 +212,40 @@
         }
       ],
       series: [{
-                  name: 'Series 1',
-                  data: [8, 3, 6, 1, 1, 2,3,2],
-                }
-              ],
+          name: 'Series 1',
+          data: [8, 3, 6, 1, 1, 2,3,2],
+        }
+      ],
       chartOptions: {
         chart: {
-            type: 'radar'
+            type: 'radar',
+            toolbar: {
+                show: false
+            }
         },
+        labels: ['Nivel 1', 'Nivel 2', 'Nivel 3', 'Nivel 4', 'Nivel 5', 'Nivel 6','Nivel 7','Nivel 8'],
         title: {
             text: 'Modelo Bifactorial Circumplejo de la Emoción'
         },
         plotOptions: {
-              radar: {
-                size: 150,
-                polygons: {
-                  strokeColors: '#e9e9e9',
-                  fill: {
-                    colors: ['#f8f8f8', '#fff']
-                  }
-                }
+          radar: {
+            size: 150,
+            polygons: {
+              strokeColors: '#e9e9e9',
+              fill: {
+                colors: ['#f8f8f8', '#fff']
               }
+            }
+          }
+        },
+        yaxis : {
+            min : 0,
+            forceNiceScale : true,
+            decimalsInFloat: 1
         },
         stroke: {
-            width: 3
+            width: 3,
+            curve: 'smooth'
         },
         dataLabels: {
             enabled: false
@@ -226,16 +253,9 @@
         fill: {
             opacity: 0.1
         },
-        theme: {
-          mode: 'light',
-          palette: 'palette1'
-        },
         markers: {
             size: 0
-        },
-        xaxis: {
-            categories: ['Alta activación', 'Afecto Positivo Alto', 'Placer', 'Afecto Negativo Bajo', 'Baja activación', 'Afecto Positivo Bajo','Displacer','Afecto Negativo Alto']
-         }
+        }
       }
     }),
   }
