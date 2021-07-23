@@ -4,8 +4,9 @@
       app
       color="white"
       flat
+      dense
     >
-      <v-container class="py-0 fill-height">
+      <v-container class="py-2 fill-height">
         <v-avatar
           class="mr-10"
           color="grey darken-1"
@@ -17,13 +18,13 @@
             >
         </v-avatar>
 
-        <v-btn
+        <v-toolbar-title
           v-for="link in links"
           :key="link"
-          text
+          class="text-uppercase"
         >
           {{ link }}
-        </v-btn>
+        </v-toolbar-title>
 
         <v-spacer></v-spacer>
 
@@ -42,7 +43,6 @@
             <v-icon>mdi-arrow-right-bold-circle-outline</v-icon>
           </v-btn>
         </v-responsive>
-
       </v-container>
     </v-app-bar>
 
@@ -145,10 +145,131 @@
             </v-sheet>
           </v-col>
         </v-row>
+        <v-row>
+            <v-col><h2 :class="`headline font-weight-black text-uppercase text-left font-weight-light mb-4 blue--text`">Observaciones</h2></v-col>
+        </v-row>
+        <v-row>
+                <v-col cols="6">
+                  <v-card color="#FFFFFF">
+                    <v-card-text class="black--text text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque nisl, fringilla sodales magna venenatis a. Duis a diam rhoncus, rutrum urna at, vestibulum felis. Quisque auctor efficitur leo ac aliquet. Sed tristique, nunc id suscipit pellentesque, libero orci tempus nisi, non viverra quam sapien vitae elit. Suspendisse potenti. In sit amet gravida enim. Donec commodo et ipsum sed bibendum. </v-card-text>
+                  </v-card>
+                </v-col>
+                <v-col cols="6">
+                  <v-card color="#FFFFFF">
+                    <v-card-text class="black--text text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque nisl, fringilla sodales magna venenatis a. Duis a diam rhoncus, rutrum urna at, vestibulum felis. Quisque auctor efficitur leo ac aliquet. Sed tristique, nunc id suscipit pellentesque, libero orci tempus nisi, non viverra quam sapien vitae elit. Suspendisse potenti. In sit amet gravida enim. Donec commodo et ipsum sed bibendum. </v-card-text>
+                  </v-card>
+                </v-col>
+                <v-col cols="6">
+                  <v-card color="#FFFFFF">
+                    <v-card-text class="black--text text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque nisl, fringilla sodales magna venenatis a. Duis a diam rhoncus, rutrum urna at, vestibulum felis. Quisque auctor efficitur leo ac aliquet. Sed tristique, nunc id suscipit pellentesque, libero orci tempus nisi, non viverra quam sapien vitae elit. Suspendisse potenti. In sit amet gravida enim. Donec commodo et ipsum sed bibendum. </v-card-text>
+                  </v-card>
+                </v-col>
+                <v-col cols="6">
+                  <v-card color="#FFFFFF">
+                    <v-card-text class="black--text text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque nisl, fringilla sodales magna venenatis a. Duis a diam rhoncus, rutrum urna at, vestibulum felis. Quisque auctor efficitur leo ac aliquet. Sed tristique, nunc id suscipit pellentesque, libero orci tempus nisi, non viverra quam sapien vitae elit. Suspendisse potenti. In sit amet gravida enim. Donec commodo et ipsum sed bibendum. </v-card-text>
+                  </v-card>
+                </v-col>
+                <v-col cols="6">
+                  <v-card color="#FFFFFF">
+                    <v-card-text class="black--text text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque nisl, fringilla sodales magna venenatis a. Duis a diam rhoncus, rutrum urna at, vestibulum felis. Quisque auctor efficitur leo ac aliquet. Sed tristique, nunc id suscipit pellentesque, libero orci tempus nisi, non viverra quam sapien vitae elit. Suspendisse potenti. In sit amet gravida enim. Donec commodo et ipsum sed bibendum. </v-card-text>
+                  </v-card>
+                </v-col>
+        </v-row>
+        <v-row>
+            <v-col><h2 :class="`headline font-weight-black text-uppercase text-left font-weight-light mb-4 blue--text`">Plan de acción</h2></v-col>
+        </v-row>
+        <v-row>
+                <v-col cols="12">
+                  <v-card color="#FFFFFF">
+                    <v-card-text class="black--text text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque nisl, fringilla sodales magna venenatis a. Duis a diam rhoncus, rutrum urna at, vestibulum felis. Quisque auctor efficitur leo ac aliquet. Sed tristique, nunc id suscipit pellentesque, libero orci tempus nisi, non viverra quam sapien vitae elit. Suspendisse potenti. In sit amet gravida enim. Donec commodo et ipsum sed bibendum. </v-card-text>
+                    <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn icon>
+                          <v-icon large>mdi-checkbox-multiple-marked-circle</v-icon>
+                        </v-btn>
+                      </v-card-actions>
+                  </v-card>
+                </v-col>
+                <v-col cols="12">
+                  <v-card color="#FFFFFF">
+                    <v-card-text class="black--text text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque nisl, fringilla sodales magna venenatis a. Duis a diam rhoncus, rutrum urna at, vestibulum felis. Quisque auctor efficitur leo ac aliquet. Sed tristique, nunc id suscipit pellentesque, libero orci tempus nisi, non viverra quam sapien vitae elit. Suspendisse potenti. In sit amet gravida enim. Donec commodo et ipsum sed bibendum. </v-card-text>
+                    <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <span class="v-fecha-accion text--subtitle-2 text--secondary font-weight-thin">[ 23/07/2021 ]</span>
+                        <v-btn icon>
+                          <v-icon color="green" large>mdi-checkbox-multiple-marked-circle</v-icon>
+                        </v-btn>
+                      </v-card-actions>
+                  </v-card>
+                </v-col>
+                <v-col cols="12">
+                  <v-card color="#FFFFFF">
+                    <v-card-text class="black--text text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque nisl, fringilla sodales magna venenatis a. Duis a diam rhoncus, rutrum urna at, vestibulum felis. Quisque auctor efficitur leo ac aliquet. Sed tristique, nunc id suscipit pellentesque, libero orci tempus nisi, non viverra quam sapien vitae elit. Suspendisse potenti. In sit amet gravida enim. Donec commodo et ipsum sed bibendum. </v-card-text>
+                    <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn icon>
+                          <v-icon large>mdi-checkbox-multiple-marked-circle</v-icon>
+                        </v-btn>
+                      </v-card-actions>
+                  </v-card>
+                </v-col>
+                <v-col cols="12">
+                  <v-card color="#FFFFFF">
+                    <v-card-text class="black--text text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque nisl, fringilla sodales magna venenatis a. Duis a diam rhoncus, rutrum urna at, vestibulum felis. Quisque auctor efficitur leo ac aliquet. Sed tristique, nunc id suscipit pellentesque, libero orci tempus nisi, non viverra quam sapien vitae elit. Suspendisse potenti. In sit amet gravida enim. Donec commodo et ipsum sed bibendum. </v-card-text>
+                  <v-card-actions>
+                                          <v-spacer></v-spacer>
+                                          <v-btn icon>
+                                            <v-icon large>mdi-checkbox-multiple-marked-circle</v-icon>
+                                          </v-btn>
+                                        </v-card-actions>
+                  </v-card>
+                </v-col>
+                <v-col cols="12">
+                  <v-card color="#FFFFFF">
+                    <v-card-text class="black--text text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque nisl, fringilla sodales magna venenatis a. Duis a diam rhoncus, rutrum urna at, vestibulum felis. Quisque auctor efficitur leo ac aliquet. Sed tristique, nunc id suscipit pellentesque, libero orci tempus nisi, non viverra quam sapien vitae elit. Suspendisse potenti. In sit amet gravida enim. Donec commodo et ipsum sed bibendum. </v-card-text>
+                    <v-card-actions>
+                         <v-spacer></v-spacer>
+                         <v-btn icon>
+                           <v-icon large>mdi-checkbox-multiple-marked-circle</v-icon>
+                         </v-btn>
+                       </v-card-actions>
+                  </v-card>
+                </v-col>
+        </v-row>
+        <v-row>
+            <v-col></v-col>
+        </v-row>
+        <v-row>
+            <v-col></v-col>
+        </v-row>
       </v-container>
+
     </v-main>
+    <v-bottom-navigation fixed>
+        <v-btn>
+          <v-icon>mdi-plus</v-icon>
+        </v-btn>
+        <v-btn>
+            <v-badge content="5">
+                <v-icon>mdi-message-bulleted</v-icon>
+            </v-badge>
+        </v-btn>
+        <v-btn>
+            <v-badge content="1/5">
+                <v-icon>mdi-checkbox-multiple-marked-circle</v-icon>
+            </v-badge>
+        </v-btn>
+    </v-bottom-navigation>
   </v-app>
+
 </template>
+
+<style scoped>
+  .v-fecha-accion {
+    font-size: 0.9em;
+    padding-right: 10px;
+  }
+</style>
 
 <script>
 
