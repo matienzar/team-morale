@@ -8,6 +8,7 @@ import java.util.List;
 
 public class TeamMorale {
     private long maxOnPeriod = 0;
+    private long maxLevelOnPeriod = 0;
     private LocalDate from;
     private LocalDate to;
     private List<MoraleEmotion> emotions = new ArrayList<>();
@@ -60,5 +61,13 @@ public class TeamMorale {
 
     public void setEmotionsByLevel(List<Long> emotionsByLevel) {
         this.emotionsByLevel = emotionsByLevel;
+    }
+
+    public long getMaxLevelOnPeriod() {
+        return maxLevelOnPeriod;
+    }
+
+    public void setMaxLevelOnPeriod(long maxLevelOnPeriod) {
+        this.maxLevelOnPeriod = maxLevelOnPeriod;
     }
 }

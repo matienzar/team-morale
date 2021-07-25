@@ -146,7 +146,7 @@
           </v-col>
         </v-row>
         <v-row>
-            <v-col><h2 :class="`headline font-weight-black text-uppercase text-left font-weight-light mb-4 blue--text`">Observaciones</h2></v-col>
+            <v-col><h2 id="observations" :class="`headline font-weight-black text-uppercase text-left font-weight-light mb-4 blue--text`">Observaciones</h2></v-col>
         </v-row>
         <v-row>
                 <v-col cols="6">
@@ -176,7 +176,7 @@
                 </v-col>
         </v-row>
         <v-row>
-            <v-col><h2 :class="`headline font-weight-black text-uppercase text-left font-weight-light mb-4 blue--text`">Plan de acción</h2></v-col>
+            <v-col><h2 id="action-plan" :class="`headline font-weight-black text-uppercase text-left font-weight-light mb-4 blue--text`">Plan de acción</h2></v-col>
         </v-row>
         <v-row>
                 <v-col cols="12">
@@ -245,20 +245,231 @@
       </v-container>
 
     </v-main>
+    <v-speed-dial
+          bottom=true
+          right=true
+          direction="top"
+          transition="slide-x-reverse-transition"
+          fixed
+          class="mb-12"
+        >
+          <template v-slot:activator>
+            <v-btn
+              v-model="fab"
+              color="blue"
+              dark
+              fab
+            >
+                <v-icon>mdi-plus</v-icon>
+            </v-btn>
+          </template>
+          <v-tooltip left>
+              <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                  fab
+                  dark
+                  small
+                  v-bind="attrs"
+                  @click="dialogemotion = true"
+                  v-on="on"
+              >
+                    <v-icon>mdi-emoticon-happy-outline</v-icon>
+              </v-btn>
+              </template>
+              <span>How you feel?</span>
+          </v-tooltip>
+          <v-tooltip left>
+              <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                  fab
+                  dark
+                  small
+                  v-bind="attrs"
+                  v-on="on"
+                   @click="dialogobservation = true"
+              >
+                    <v-icon>mdi-message-bulleted</v-icon>
+              </v-btn>
+              </template>
+              <span>New observation</span>
+          </v-tooltip>
+          <v-tooltip left>
+                <template v-slot:activator="{ on, attrs }">
+                <v-btn
+                    fab
+                    dark
+                    small
+                    v-bind="attrs"
+                    v-on="on"
+                    @click="dialogactionplan = true"
+                >
+                      <v-icon>mdi-checkbox-multiple-marked-circle</v-icon>
+                </v-btn>
+                </template>
+                <span>New action</span>
+          </v-tooltip>
+    </v-speed-dial>
+    <v-dialog
+        v-model="dialogactionplan"
+        persistent
+        max-width="600px"
+    >
+        <v-card>
+          <v-card-title>
+            <span class="blue--text text-h5">New action</span>
+          </v-card-title>
+          <v-card-text>
+            <v-container>
+              <v-row>
+                <v-col
+                  cols="12"
+                  sm="12"
+                  md="12"
+                >
+                  <v-textarea
+                        name="input-7-1"
+                        required
+                        hint="Action to plan"
+                        persistent-hint
+                        auto-grow
+                        clearable
+                        clear-icon="mdi-close-circle"
+                        prepend-icon="mdi-checkbox-multiple-marked-circle"
+                   ></v-textarea>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              color="blue darken-1"
+              text
+              @click="dialogactionplan = false"
+            >
+              Close
+            </v-btn>
+            <v-btn
+              color="blue darken-1"
+              text
+              @click="dialogactionplan = false"
+            >
+              Add
+            </v-btn>
+          </v-card-actions>
+    </v-card>
+    </v-dialog>
+    <v-dialog
+        v-model="dialogobservation"
+        persistent
+        max-width="600px"
+    >
+        <v-card>
+          <v-card-title>
+            <span class="blue--text text-h5">New observation</span>
+          </v-card-title>
+          <v-card-text>
+            <v-container>
+              <v-row>
+                <v-col
+                  cols="12"
+                  sm="12"
+                  md="12"
+                >
+                  <v-textarea
+                        name="input-7-1"
+                        required
+                        hint="Add an observation on this period"
+                        persistent-hint
+                        auto-grow
+                        clearable
+                        clear-icon="mdi-close-circle"
+                        prepend-icon="mdi-message-bulleted"
+                   ></v-textarea>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              color="blue darken-1"
+              text
+              @click="dialogobservation = false"
+            >
+              Close
+            </v-btn>
+            <v-btn
+              color="blue darken-1"
+              text
+              @click="dialogobservation = false"
+            >
+              Add
+            </v-btn>
+          </v-card-actions>
+    </v-card>
+    </v-dialog>
+    <v-dialog
+        v-model="dialogemotion"
+        persistent
+        max-width="600px"
+    >
+        <v-card>
+          <v-card-title>
+            <span class="blue--text text-h5">How do you feel?</span>
+          </v-card-title>
+          <v-card-text>
+            <v-container>
+              <v-row>
+                <v-col
+                  cols="12"
+                  sm="12"
+                  md="12"
+                >
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              color="blue darken-1"
+              text
+              @click="dialogemotion = false"
+            >
+              Close
+            </v-btn>
+            <v-btn
+              color="blue darken-1"
+              text
+              @click="dialogemotion = false"
+            >
+              Add
+            </v-btn>
+          </v-card-actions>
+    </v-card>
+    </v-dialog>
     <v-bottom-navigation fixed>
-        <v-btn>
-          <v-icon>mdi-plus</v-icon>
-        </v-btn>
-        <v-btn>
-            <v-badge content="5">
-                <v-icon>mdi-message-bulleted</v-icon>
-            </v-badge>
-        </v-btn>
-        <v-btn>
-            <v-badge content="1/5">
-                <v-icon>mdi-checkbox-multiple-marked-circle</v-icon>
-            </v-badge>
-        </v-btn>
+        <v-tooltip top>
+            <template v-slot:activator="{ on, attrs }">
+            <v-btn href="#observations" v-bind="attrs" v-on="on">
+                <v-badge content="5">
+                    <v-icon>mdi-message-bulleted</v-icon>
+                </v-badge>
+            </v-btn>
+            </template>
+            <span>Go to observations</span>
+        </v-tooltip>
+        <v-tooltip top>
+            <template v-slot:activator="{ on, attrs }">
+            <v-btn href="#action-plan" v-bind="attrs" v-on="on">
+                <v-badge content="1/5">
+                    <v-icon>mdi-checkbox-multiple-marked-circle</v-icon>
+                </v-badge>
+            </v-btn>
+            </template>
+            <span>Go to action plan</span>
+        </v-tooltip>
     </v-bottom-navigation>
   </v-app>
 
@@ -284,7 +495,7 @@
             this.morale = data;
 
             this.series = [{name: 'Emotion Levels', data: data.emotionsByLevel}];
-            var maxEmotions = data.maxOnPeriod;
+            var maxEmotions = data.maxLevelOnPeriod;
             console.log('Max emotions :'+ maxEmotions);
             var _options = {
                 labels: data.levels,
@@ -307,6 +518,9 @@
         );
     },
     data: () => ({
+      dialogactionplan: false,
+      dialogobservation: false,
+      dialogemotion: false,
       links: [
         'Hacemos realidad tus ideas'
       ],

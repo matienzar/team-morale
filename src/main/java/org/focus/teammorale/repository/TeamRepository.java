@@ -55,6 +55,7 @@ public class TeamRepository implements PanacheMongoRepository<Team> {
             morale.setMaxOnPeriod(
                     emotions.stream().mapToLong(MoraleEmotion::getTotalOnPeriod).max().orElse(0L)
             );
+            morale.setMaxLevelOnPeriod(Collections.max(emotionsByLevel));
 
             return morale;
         }
@@ -80,7 +81,7 @@ public class TeamRepository implements PanacheMongoRepository<Team> {
 
         Set<TeamEmotion> emotions = new HashSet<>();
         TeamEmotion emotion = new TeamEmotion();
-        emotion.emotion = Emotion.ALEGRE;
+        emotion.emotion = Emotion.FELIZ;
         emotion.registered = LocalDateTime.now();
         emotion.observation = "Ha sido una gran semana";
         emotions.add(emotion);
@@ -88,7 +89,19 @@ public class TeamRepository implements PanacheMongoRepository<Team> {
         emotion = new TeamEmotion();
         emotion.emotion = Emotion.ALEGRE;
         emotion.registered = LocalDateTime.now();
+        emotion.observation = "Primera emotion ALEGRE";
+        emotions.add(emotion);
+
+        emotion = new TeamEmotion();
+        emotion.emotion = Emotion.ALEGRE;
+        emotion.registered = LocalDateTime.now();
         emotion.observation = "Segunda emotion ALEGRE";
+        emotions.add(emotion);
+
+        emotion = new TeamEmotion();
+        emotion.emotion = Emotion.COMPLACIDO;
+        emotion.registered = LocalDateTime.now();
+        emotion.observation = "De tener los compañeros que tengo";
         emotions.add(emotion);
 
         emotion = new TeamEmotion();
@@ -101,6 +114,18 @@ public class TeamRepository implements PanacheMongoRepository<Team> {
         emotion.emotion = Emotion.ENTUSIASMADO;
         emotion.registered = LocalDateTime.now();
         emotion.observation = "Entusiasmado con el nuevo proyecto";
+        emotions.add(emotion);
+
+        emotion = new TeamEmotion();
+        emotion.emotion = Emotion.ESTIMULADO;
+        emotion.registered = LocalDateTime.now();
+        emotion.observation = "Con el curso de formación sobre quarkus";
+        emotions.add(emotion);
+
+        emotion = new TeamEmotion();
+        emotion.emotion = Emotion.NERVIOSO;
+        emotion.registered = LocalDateTime.now();
+        emotion.observation = "Por la puesta en marcha complicada que tenemos";
         emotions.add(emotion);
 
         team.teamEmotions = emotions;
