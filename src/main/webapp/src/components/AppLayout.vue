@@ -130,7 +130,7 @@
                             ({{ item.totalOnPeriod }})
                         </span>
                         <v-rating
-                            v-model="item.totalOnPeriod * 5 / morale.maxOnPeriod"
+                            :value="item.totalOnPeriod * 5 / morale.maxOnPeriod"
                             background-color="yellow"
                             color="yellow accent-4"
                             dense
@@ -235,6 +235,120 @@
                        </v-card-actions>
                   </v-card>
                 </v-col>
+        </v-row>
+        <v-row>
+            <v-col cols="12"><h2 id="kudo" :class="`headline font-weight-black text-uppercase text-left font-weight-light mb-4 blue--text`">Kudos</h2></v-col>
+            <v-col cols="4">
+                <v-card
+                    class="mx-auto"
+                    max-width="400"
+                >
+                    <v-card-title>
+                      <v-icon
+                        large
+                        left
+                        color="blue"
+                      >
+                       mdi-thumb-up
+                      </v-icon>
+                      <span class="text-h6 font-weight-light">Great Job!!!</span>
+                    </v-card-title>
+
+                <v-card-text>
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque nisl, fringilla sodales magna venenatis a."
+                </v-card-text>
+
+                <v-card-actions>
+                  <v-list-item class="grow">
+                    <v-list-item-avatar color="blue">
+                      <v-img
+                        class="elevation-6"
+                        alt=""
+                        src="https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light"
+                      ></v-img>
+                    </v-list-item-avatar>
+
+                    <v-list-item-content>
+                      <v-list-item-title class="text-left">Kyrian You</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+            <v-col cols="4">
+                <v-card
+                    class="mx-auto"
+                    max-width="400"
+                >
+                    <v-card-title>
+                      <v-icon
+                        large
+                        left
+                        color="blue"
+                      >
+                       mdi-thumb-up
+                      </v-icon>
+                      <span class="text-h6 font-weight-light">Great Job!!!</span>
+                    </v-card-title>
+
+                <v-card-text>
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque nisl, fringilla sodales magna venenatis a."
+                </v-card-text>
+
+                <v-card-actions>
+                  <v-list-item class="grow">
+                    <v-list-item-avatar color="blue">
+                      <v-img
+                        class="elevation-6"
+                        alt=""
+                        src="https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight&accessoriesType=Blank&hairColor=PastelPink&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light"
+                      ></v-img>
+                    </v-list-item-avatar>
+
+                    <v-list-item-content>
+                      <v-list-item-title class="text-left">Myrian You</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+            <v-col cols="4">
+                <v-card
+                    class="mx-auto"
+                    max-width="400"
+                >
+                    <v-card-title>
+                      <v-icon
+                        large
+                        left
+                        color="blue"
+                      >
+                       mdi-thumb-up
+                      </v-icon>
+                      <span class="text-h6 font-weight-light">Great Job!!!</span>
+                    </v-card-title>
+
+                <v-card-text>
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis neque nisl, fringilla sodales magna venenatis a."
+                </v-card-text>
+
+                <v-card-actions>
+                  <v-list-item class="grow">
+                    <v-list-item-avatar color="blue">
+                      <v-img
+                        class="elevation-6"
+                        alt=""
+                        src="https://avataaars.io/?avatarStyle=Transparent&topType=WinterHat4&accessoriesType=Kurt&hatColor=Red&facialHairType=Blank&clotheType=Hoodie&clotheColor=Pink&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=DarkBrown"
+                      ></v-img>
+                    </v-list-item-avatar>
+
+                    <v-list-item-content>
+                      <v-list-item-title class="text-left">Kyrian You</v-list-item-title>
+                    </v-list-item-content>
+                  </v-list-item>
+                </v-card-actions>
+              </v-card>
+            </v-col>
         </v-row>
         <v-row>
             <v-col></v-col>
