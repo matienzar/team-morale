@@ -20,3 +20,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 npm install --save apexcharts
 npm install --save vue-apexcharts
 ```
+
+# Using routes
+```
+npm install --save vue-router
+```
